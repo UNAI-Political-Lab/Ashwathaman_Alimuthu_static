@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 100" width="100%" height="100%">
+  <!-- Lotus Icon -->
+  <g transform="translate(10, 10)">
+    <!-- Orange Petals (BJP style lotus) -->
+    <!-- Central Petal -->
+    <path d="M 40,10 C 35,30 35,60 40,70 C 45,60 45,30 40,10 Z" fill="#FF5A00" stroke="#FF5A00" stroke-width="1.5" />
+    
+    <!-- Left Inner Petal -->
+    <path d="M 40,10 C 25,25 20,55 32,70 C 32,70 30,50 35,40 C 37,35 40,30 40,10 Z" fill="#FF5A00" stroke="#FF5A00" stroke-width="1.5" />
+    <!-- Right Inner Petal -->
+    <path d="M 40,10 C 55,25 60,55 48,70 C 48,70 50,50 45,40 C 43,35 40,30 40,10 Z" fill="#FF5A00" stroke="#FF5A00" stroke-width="1.5" />
+    
+    <!-- Left Outer Petal -->
+    <path d="M 40,15 C 10,35 10,65 24,75 C 24,75 18,55 28,45 C 32,40 37,30 40,15 Z" fill="#FF5A00" stroke="#FF5A00" stroke-width="1.5" />
+    <!-- Right Outer Petal -->
+    <path d="M 40,15 C 70,35 70,65 56,75 C 56,75 62,55 52,45 C 48,40 43,30 40,15 Z" fill="#FF5A00" stroke="#FF5A00" stroke-width="1.5" />
+    
+    <!-- Left Bottom Petal -->
+    <path d="M 40,40 C 8,50 5,75 22,78 C 22,78 12,70 20,60 C 24,55 35,45 40,40 Z" fill="#FF5A00" stroke="#FF5A00" stroke-width="1.5" />
+    <!-- Right Bottom Petal -->
+    <path d="M 40,40 C 72,50 75,75 58,78 C 58,78 68,70 60,60 C 56,55 45,45 40,40 Z" fill="#FF5A00" stroke="#FF5A00" stroke-width="1.5" />
+
+    <!-- Green Leaves (Bottom base of lotus) -->
+    <!-- Left Leaf -->
+    <path d="M 40,70 C 20,70 15,82 25,83 C 32,83 38,78 40,70 Z" fill="#138808" />
+    <!-- Right Leaf -->
+    <path d="M 40,70 C 60,70 65,82 55,83 C 48,83 42,78 40,70 Z" fill="#138808" />
+    <!-- Center Small Base -->
+    <ellipse cx="40" cy="74" rx="8" ry="4" fill="#138808" />
+    <!-- Stem -->
+    <path d="M 38,76 Q 40,88 36,92 Q 38,92 40,82 Q 42,88 44,92 Q 42,82 42,76 Z" fill="#138808" />
+  </g>
+
+  <!-- Wordmark Text -->
+  <g transform="translate(100, 0)">
+    <!-- First Name -->
+    <text x="0" y="38" font-family="'Poppins', 'Montserrat', sans-serif" font-weight="900" font-size="28" fill="#1A1A1A" letter-spacing="1">ASHVATHAMAN</text>
+    <!-- Last Name -->
+    <text x="0" y="66" font-family="'Poppins', 'Montserrat', sans-serif" font-weight="900" font-size="28" fill="#FF5A00" letter-spacing="1">ALLIMUTHU</text>
+    <!-- Tagline -->
+    <text x="0" y="84" font-family="'Inter', sans-serif" font-weight="600" font-size="10" fill="#5B5B5B" letter-spacing="1">POLITICAL STRATEGIST | SOCIAL LEADER | ADVOCATE</text>
+  </g>
+</svg>
