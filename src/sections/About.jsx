@@ -9,7 +9,7 @@ export default function About() {
         
         <div className="about-grid">
           <div className="about-image">
-            <img src="/assets/about-profile.png" alt="A. Ashvathaman Allimuthu portrait" />
+            <img src="/assets/about-profile.webp" alt="A. Ashvathaman Allimuthu portrait" />
             <div className="credentials-badge">
               B.A., B.L. &bull; PRACTICING ADVOCATE &bull; BJP STATE SECRETARY (LEGAL CELL)
             </div>

@@ -32,10 +32,10 @@ export default function Home({ onNavigate, onWatchVideo }) {
           
           <div className="hero-right">
             <div className="hero-image-wrapper">
-              <img src="/assets/herosection.png" alt="A. Ashvathaman Allimuthu speaking at a podium" className="hero-img-main" />
+              <img src="/assets/herosection.webp" alt="A. Ashvathaman Allimuthu speaking at a podium" className="hero-img-main" />
               {/* Modi Greeting Inset Card */}
               <div className="hero-inset-card">
-                <img src="/assets/insert-modi.png" alt="Ashvathaman Allimuthu greeting PM Narendra Modi" />
+                <img src="/assets/insert-modi.webp" alt="Ashvathaman Allimuthu greeting PM Narendra Modi" />
                 <div className="card-content">
                   <h4>People First. India Always.</h4>
                   <p>Building a brighter tomorrow together.</p>

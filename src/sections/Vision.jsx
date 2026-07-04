@@ -39,7 +39,7 @@ export default function Vision() {
       <div className="container">
         <div className="section-eyebrow">Vision</div>
         <h2 className="section-title">Ideology &amp; Guiding Pillars</h2>
-        <div className="pillars-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))' }}>
+        <div className="pillars-grid vision-pillars-grid">
           {pillars.map((p, idx) => (
             <div key={idx} className="pillar-card">
               <div className="pillar-icon"><i className={p.icon}></i></div>

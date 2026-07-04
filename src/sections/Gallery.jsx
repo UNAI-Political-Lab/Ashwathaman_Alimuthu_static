@@ -14,25 +14,25 @@ export default function Gallery() {
   const galleryItems = [
     {
       category: 'leaders',
-      img: '/assets/gallery-leaders.png',
+      img: '/assets/gallery-leaders.webp',
       title: 'Meeting with National Leaders',
       desc: 'Discussing strategic state reforms in Chennai.'
     },
     {
       category: 'protests',
-      img: '/assets/gallery-protest.png',
+      img: '/assets/gallery-protest.webp',
       title: 'Melmambattu Environmental Rally',
       desc: 'Leading residents to protect local groundwater.'
     },
     {
       category: 'cultural',
-      img: '/assets/gallery-temple.png',
+      img: '/assets/gallery-temple.webp',
       title: 'Chidambaram Heritage Action',
       desc: 'Reviewing ancient temple borders with priests.'
     },
     {
       category: 'grassroots',
-      img: '/assets/gallery-grassroots.png',
+      img: '/assets/gallery-grassroots.webp',
       title: 'NLC-Affected Farmers Assembly',
       desc: 'Discussing fair land compensation rights at Cuddalore.'
     }
