@@ -2,14 +2,7 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    { "source": "/home", "destination": "/#home", "permanent": true },
-    { "source": "/about", "destination": "/#about", "permanent": true },
-    { "source": "/journey", "destination": "/#journey", "permanent": true },
-    { "source": "/vision", "destination": "/#vision", "permanent": true },
-    { "source": "/initiatives", "destination": "/#initiatives", "permanent": true },
-    { "source": "/media", "destination": "/#media", "permanent": true },
-    { "source": "/gallery", "destination": "/#gallery", "permanent": true },
-    { "source": "/contact", "destination": "/#contact", "permanent": true }
+    { "source": "/home", "destination": "/", "permanent": true }
   ],
   "rewrites": [
     { "source": "/((?!assets/|.*\\.).*)", "destination": "/index.html" }

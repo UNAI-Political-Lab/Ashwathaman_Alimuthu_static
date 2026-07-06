@@ -1,9 +1,9 @@
 import React from 'react';
 
 export default function Footer({ onNavigate }) {
-  const handleLinkClick = (e, hash) => {
+  const handleLinkClick = (e, path) => {
     e.preventDefault();
-    onNavigate(hash);
+    onNavigate(path);
   };
 
   return (
@@ -11,7 +11,7 @@ export default function Footer({ onNavigate }) {
       <div className="container">
         <div className="footer-grid">
           <div className="footer-brand">
-            <img src="/assets/logo.svg" alt="Ashvathaman Allimuthu" className="footer-brand-logo" />
+            <img src="/assets/logo_1_0.webp" alt="Ashvathaman Allimuthu" className="footer-brand-logo" />
             <p className="footer-brand-desc">
               A. Ashvathaman Allimuthu is State Secretary of Tamil Nadu BJP Legal Cell, a practicing advocate at Chennai, political leader and writer dedicated to national civilizational progress.
             </p>
@@ -20,14 +20,14 @@ export default function Footer({ onNavigate }) {
           <div className="footer-links-col">
             <h3>Quick Links</h3>
             <ul className="footer-links-list">
-              <li><a href="#home" onClick={(e) => handleLinkClick(e, '#home')}>Home</a></li>
-              <li><a href="#about" onClick={(e) => handleLinkClick(e, '#about')}>About</a></li>
-              <li><a href="#journey" onClick={(e) => handleLinkClick(e, '#journey')}>Journey</a></li>
-              <li><a href="#vision" onClick={(e) => handleLinkClick(e, '#vision')}>Vision</a></li>
-              <li><a href="#initiatives" onClick={(e) => handleLinkClick(e, '#initiatives')}>Initiatives</a></li>
-              <li><a href="#media" onClick={(e) => handleLinkClick(e, '#media')}>Media</a></li>
-              <li><a href="#gallery" onClick={(e) => handleLinkClick(e, '#gallery')}>Gallery</a></li>
-              <li><a href="#contact" onClick={(e) => handleLinkClick(e, '#contact')}>Contact</a></li>
+              <li><a href="/" onClick={(e) => handleLinkClick(e, '/')}>Home</a></li>
+              <li><a href="/about" onClick={(e) => handleLinkClick(e, '/about')}>About</a></li>
+              <li><a href="/journey" onClick={(e) => handleLinkClick(e, '/journey')}>Journey</a></li>
+              <li><a href="/vision" onClick={(e) => handleLinkClick(e, '/vision')}>Vision</a></li>
+              <li><a href="/initiatives" onClick={(e) => handleLinkClick(e, '/initiatives')}>Initiatives</a></li>
+              <li><a href="/media" onClick={(e) => handleLinkClick(e, '/media')}>Media</a></li>
+              <li><a href="/gallery" onClick={(e) => handleLinkClick(e, '/gallery')}>Gallery</a></li>
+              <li><a href="/contact" onClick={(e) => handleLinkClick(e, '/contact')}>Contact</a></li>
             </ul>
           </div>
           

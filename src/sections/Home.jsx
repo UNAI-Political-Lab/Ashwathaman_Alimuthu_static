@@ -1,9 +1,9 @@
 import React from 'react';
 
 export default function Home({ onNavigate, onWatchVideo }) {
-  const handleLinkClick = (e, hash) => {
+  const handleLinkClick = (e, path) => {
     e.preventDefault();
-    onNavigate(hash);
+    onNavigate(path);
   };
 
   return (
@@ -21,10 +21,10 @@ export default function Home({ onNavigate, onWatchVideo }) {
               Committed to building a stronger, inclusive and developed India through people-centric leadership, youth empowerment and social responsibility.
             </p>
             <div className="hero-ctas">
-              <a href="#vision" onClick={(e) => handleLinkClick(e, '#vision')} className="btn-primary">
+              <a href="/vision" onClick={(e) => handleLinkClick(e, '/vision')} className="btn-primary">
                 VIEW VISION <i className="fas fa-chevron-right" style={{ fontSize: '0.8rem' }}></i>
               </a>
-              <a href="#journey" onClick={(e) => handleLinkClick(e, '#journey')} className="btn-secondary">
+              <a href="/journey" onClick={(e) => handleLinkClick(e, '/journey')} className="btn-secondary">
                 EXPLORE JOURNEY <i className="fas fa-chevron-right" style={{ fontSize: '0.8rem' }}></i>
               </a>
             </div>
@@ -40,30 +40,6 @@ export default function Home({ onNavigate, onWatchVideo }) {
                   <h4>People First. India Always.</h4>
                   <p>Building a brighter tomorrow together.</p>
                 </div>
-              </div>
-            </div>
-            
-            {/* Floating Right Sidebar */}
-            <div className="hero-vertical-bar">
-              <div className="vertical-bar-item">
-                <i className="fas fa-users"></i>
-                <span>People</span>
-              </div>
-              <div className="vertical-bar-item">
-                <i className="fas fa-landmark"></i>
-                <span>Leadership</span>
-              </div>
-              <div className="vertical-bar-item">
-                <i className="fas fa-eye"></i>
-                <span>Vision</span>
-              </div>
-              <div className="vertical-bar-item">
-                <i className="fas fa-hands-helping"></i>
-                <span>Service</span>
-              </div>
-              <div className="vertical-bar-item">
-                <i className="fas fa-graduation-cap"></i>
-                <span>Youth</span>
               </div>
             </div>
           </div>

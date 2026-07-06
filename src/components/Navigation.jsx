@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-export default function Navigation({ activeHash, onNavigate }) {
+export default function Navigation({ activePath, onNavigate }) {
   const [isSticky, setIsSticky] = useState(false);
   const [isMobileNavActive, setIsMobileNavActive] = useState(false);
 
@@ -17,19 +17,19 @@ export default function Navigation({ activeHash, onNavigate }) {
   }, []);
 
   const navItems = [
-    { label: 'Home', hash: '#home' },
-    { label: 'About', hash: '#about' },
-    { label: 'Journey', hash: '#journey' },
-    { label: 'Vision', hash: '#vision' },
-    { label: 'Initiatives', hash: '#initiatives' },
-    { label: 'Media', hash: '#media' },
-    { label: 'Gallery', hash: '#gallery' },
-    { label: 'Contact', hash: '#contact' }
+    { label: 'Home', path: '/' },
+    { label: 'About', path: '/about' },
+    { label: 'Journey', path: '/journey' },
+    { label: 'Vision', path: '/vision' },
+    { label: 'Initiatives', path: '/initiatives' },
+    { label: 'Media', path: '/media' },
+    { label: 'Gallery', path: '/gallery' },
+    { label: 'Contact', path: '/contact' }
   ];
 
-  const handleLinkClick = (e, hash) => {
+  const handleLinkClick = (e, path) => {
     e.preventDefault();
-    onNavigate(hash);
+    onNavigate(path);
     setIsMobileNavActive(false);
   };
 
@@ -37,17 +37,17 @@ export default function Navigation({ activeHash, onNavigate }) {
     <>
       <header className={`header ${isSticky ? 'sticky' : ''}`}>
         <div className="container nav-container">
-          <a href="#home" onClick={(e) => handleLinkClick(e, '#home')} className="logo logo-link">
-            <img src="/assets/logo.svg" alt="Ashvathaman Allimuthu Logo" />
+          <a href="/" onClick={(e) => handleLinkClick(e, '/')} className="logo logo-link">
+            <img src="/assets/logo_1_0.webp" alt="Ashvathaman Allimuthu Logo" />
           </a>
           <nav>
             <ul className="nav-links">
               {navItems.map((item) => (
-                <li key={item.hash}>
+                <li key={item.path}>
                   <a
-                    href={item.hash}
-                    className={activeHash === item.hash ? 'active' : ''}
-                    onClick={(e) => handleLinkClick(e, item.hash)}
+                    href={item.path}
+                    className={activePath === item.path ? 'active' : ''}
+                    onClick={(e) => handleLinkClick(e, item.path)}
                   >
                     {item.label}
                   </a>
@@ -62,7 +62,7 @@ export default function Navigation({ activeHash, onNavigate }) {
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a>
               <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-youtube"></i></a>
             </div>
-            <a href="#contact" onClick={(e) => handleLinkClick(e, '#contact')} className="btn-contact-nav">
+            <a href="/contact" onClick={(e) => handleLinkClick(e, '/contact')} className="btn-contact-nav">
               GET IN TOUCH <i className="fas fa-chevron-right" style={{ fontSize: '0.75rem' }}></i>
             </a>
             <i className="fas fa-bars menu-toggle" onClick={() => setIsMobileNavActive(true)}></i>
@@ -79,11 +79,11 @@ export default function Navigation({ activeHash, onNavigate }) {
         <i className="fas fa-times mobile-nav-close" onClick={() => setIsMobileNavActive(false)}></i>
         <ul className="mobile-nav-links">
           {navItems.map((item) => (
-            <li key={item.hash}>
+            <li key={item.path}>
               <a
-                href={item.hash}
-                className={activeHash === item.hash ? 'active' : ''}
-                onClick={(e) => handleLinkClick(e, item.hash)}
+                href={item.path}
+                className={activePath === item.path ? 'active' : ''}
+                onClick={(e) => handleLinkClick(e, item.path)}
               >
                 {item.label}
               </a>

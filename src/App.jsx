@@ -11,47 +11,64 @@ import Gallery from './sections/Gallery';
 import Contact from './sections/Contact';
 
 export default function App() {
-  const [activeHash, setActiveHash] = useState('#home');
+  const [activePath, setActivePath] = useState('/');
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
-  // Handle client-side path to hash redirection (e.g., /about -> /#about) for dev server / direct loads
+  // Helper to scroll to a section by element ID
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const headerOffset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  // Navigates and updates browser history
+  const navigateTo = (path) => {
+    window.history.pushState(null, null, path);
+    setActivePath(path);
+    
+    // Map path to section id
+    const sectionId = path === '/' ? 'home' : path.replace('/', '');
+    scrollToSection(sectionId);
+  };
+
+  // Sync routing on popstate (browser back/forward button clicks)
   useEffect(() => {
-    const pathname = window.location.pathname.replace(/^\/|\/$/g, '').toLowerCase();
-    const validPaths = ['home', 'about', 'journey', 'vision', 'initiatives', 'media', 'gallery', 'contact'];
-    if (validPaths.includes(pathname)) {
-      window.location.replace(`/#${pathname}`);
+    const handlePopState = () => {
+      const path = window.location.pathname;
+      setActivePath(path);
+      const sectionId = path === '/' ? 'home' : path.replace('/', '');
+      scrollToSection(sectionId);
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  // Handle direct loads / hard reloads
+  useEffect(() => {
+    const path = window.location.pathname;
+    const validPaths = ['/', '/home', '/about', '/journey', '/vision', '/initiatives', '/media', '/gallery', '/contact'];
+    
+    if (validPaths.includes(path)) {
+      const resolvedPath = path === '/home' ? '/' : path;
+      setActivePath(resolvedPath);
+      // Wait for DOM to render completely before scrolling
+      setTimeout(() => {
+        const sectionId = resolvedPath === '/' ? 'home' : resolvedPath.replace('/', '');
+        scrollToSection(sectionId);
+      }, 100);
     }
   }, []);
 
-  // Sync hash routing on manual URL modifications & click actions
-  useEffect(() => {
-    const handleHashChange = () => {
-      const hash = window.location.hash || '#home';
-      setActiveHash(hash);
-      
-      const targetId = hash.replace('#', '');
-      const element = document.getElementById(targetId);
-      if (element) {
-        // Adjust for sticky header height (approx 80px)
-        const headerOffset = 80;
-        const elementPosition = element.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
-      }
-    };
-
-    window.addEventListener('hashchange', handleHashChange);
-    // Initial sync
-    handleHashChange();
-
-    return () => window.removeEventListener('hashchange', handleHashChange);
-  }, []);
-
-  // Update active hash based on scroll position
+  // Update active path based on scroll position
   useEffect(() => {
     const sections = ['home', 'about', 'journey', 'vision', 'initiatives', 'media', 'gallery', 'contact'];
     
@@ -65,9 +82,10 @@ export default function App() {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const id = entry.target.id;
-          setActiveHash(`#${id}`);
-          // Update URL hash without causing a page jump/hashchange trigger
-          window.history.replaceState(null, null, `#${id}`);
+          const path = id === 'home' ? '/' : `/${id}`;
+          setActivePath(path);
+          // Update URL without causing page reload or popstate trigger
+          window.history.replaceState(null, null, path);
         }
       });
     };
@@ -87,18 +105,13 @@ export default function App() {
     };
   }, []);
 
-  const navigateTo = (hash) => {
-    window.location.hash = hash;
-    setActiveHash(hash);
-  };
-
   const closeVideoModal = () => {
     setIsVideoModalOpen(false);
   };
 
   return (
     <>
-      <Navigation activeHash={activeHash} onNavigate={navigateTo} />
+      <Navigation activePath={activePath} onNavigate={navigateTo} />
 
       <Home onNavigate={navigateTo} onWatchVideo={() => setIsVideoModalOpen(true)} />
       <About />
