@@ -94,6 +94,9 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1550px !important;
+  width: 100%;
+  padding: 0 30px !important;
 }
 
 .logo img {
@@ -104,7 +107,7 @@ a {
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 25px;
+  gap: clamp(18px, 2vw, 35px);
   align-items: center;
 }
 
@@ -143,6 +146,12 @@ a {
   display: flex;
   gap: 12px;
   margin: 0 15px;
+}
+
+@media (max-width: 1250px) {
+  .social-nav {
+    display: none;
+  }
 }
 
 .social-nav a {
@@ -1088,10 +1097,195 @@ a {
   margin-bottom: 40px;
 }
 
+/* Desktop View (Interactive Image Accordion) */
+.initiatives-desktop-view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  width: 100%;
+}
+
+.initiatives-mobile-view {
+  display: none;
+}
+
+.initiatives-accordion-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.init-acc-item {
+  position: relative;
+  height: 500px;
+  width: 75px;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+}
+
+.init-acc-item.active {
+  width: 530px;
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(255, 90, 0, 0.2);
+}
+
+.init-acc-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.init-acc-item:hover .init-acc-bg {
+  transform: scale(1.05);
+}
+
+.init-acc-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(11, 11, 15, 0.3) 0%, rgba(11, 11, 15, 0.75) 100%);
+  z-index: 1;
+  transition: var(--transition-smooth);
+}
+
+.init-acc-item.active .init-acc-overlay {
+  background: linear-gradient(180deg, rgba(11, 11, 15, 0.2) 0%, rgba(11, 11, 15, 0.85) 100%);
+}
+
+.init-acc-icon {
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--orange-600);
+  font-size: 1.15rem;
+  box-shadow: var(--shadow-md);
+  z-index: 3;
+  transition: all 0.4s ease;
+}
+
+.init-acc-item.active .init-acc-icon {
+  left: 35px;
+  transform: none;
+  background: var(--orange-600);
+  color: var(--white);
+}
+
+.init-acc-vertical-title {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  transform-origin: center center;
+  color: rgba(255, 255, 255, 0.95);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  z-index: 2;
+  transition: opacity 0.3s ease;
+}
+
+.init-acc-item.active .init-acc-vertical-title {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.init-acc-content {
+  position: absolute;
+  bottom: 25px;
+  left: 25px;
+  right: 25px;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1) 0.2s;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+}
+
+.init-acc-item.active .init-acc-content {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.init-acc-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: var(--white);
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.init-acc-divider {
+  height: 2px;
+  width: 50px;
+  background: var(--orange-500);
+  margin-bottom: 15px;
+  border-radius: 2px;
+}
+
+.init-acc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.init-acc-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.92);
+  text-align: left;
+}
+
+.arrow-bullet {
+  color: var(--orange-500);
+  font-size: 0.7rem;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+
 .initiatives-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
+  align-items: flex-start;
 }
 
 .initiatives-grid > .initiatives-card {
@@ -1685,9 +1879,16 @@ textarea.form-control {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 20px;
   font-size: 0.8rem;
-  opacity: 0.6;
+}
+
+.footer-bottom-info {
+  opacity: 0.7;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
 }
 
 .footer-bottom-links {
@@ -1697,6 +1898,73 @@ textarea.form-control {
 
 .footer-bottom-links a:hover {
   color: var(--orange-500);
+}
+
+/* --- UNAI Tech Footer Badge --- */
+.unai-tech-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 6px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.unai-tech-badge:hover {
+  background: rgba(255, 90, 0, 0.08);
+  border-color: rgba(255, 90, 0, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(255, 90, 0, 0.15);
+}
+
+.unai-tech-badge-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.1;
+}
+
+.unai-crafted {
+  font-size: 0.55rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.unai-brand {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--orange-500);
+  letter-spacing: 0.02em;
+}
+
+.unai-tech {
+  color: var(--white);
+  font-weight: 700;
+}
+
+.unai-tech-badge-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--orange-500);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.unai-tech-badge:hover .unai-tech-badge-icon {
+  background: var(--orange-600);
+  color: var(--white);
+  transform: rotate(45deg);
 }
 
 /* --- Lightbox/Video Modal (Watch Video) --- */
@@ -2006,7 +2274,7 @@ textarea.form-control {
   }
 
   .nav-links {
-    gap: 18px;
+    gap: 22px;
   }
 
   .nav-links a {
@@ -2016,6 +2284,14 @@ textarea.form-control {
 
 /* ————— ≤ 991px — tablet layout, stack grids to single column ————— */
 @media (max-width: 991px) {
+  .initiatives-desktop-view {
+    display: none;
+  }
+
+  .initiatives-mobile-view {
+    display: block;
+  }
+
   /* --- Navigation --- */
   .header {
     background: var(--white);

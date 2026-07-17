@@ -6,19 +6,22 @@ export default function Media() {
       source: 'The Times of India',
       date: 'March 2023',
       title: 'Cuddalore-Pondy Railway line approved in Union Budget after years of advocacy',
-      desc: 'Union Ministry includes the long-pending Cuddalore-Pondicherry rail link in the development budget following active public representations led by BJP State Secretary A. Ashvathaman Allimuthu.'
+      desc: 'Union Ministry includes the long-pending Cuddalore-Pondicherry rail link in the development budget following active public representations led by BJP State Secretary A. Ashvathaman Allimuthu.',
+      url: '/news/cuddalore-railway.html'
     },
     {
       source: 'The New Indian Express',
       date: 'June 2021',
       title: 'Melmambattu chemical/liquor plant shut down following farmer protests',
-      desc: 'State environment pollution board orders closure of a groundwater polluting manufacturing plant in Cuddalore after an intense legal and public demonstration led by local advocates.'
+      desc: 'State environment pollution board orders closure of a groundwater polluting manufacturing plant in Cuddalore after an intense legal and public demonstration led by local advocates.',
+      url: '/news/melmambattu-closure.html'
     },
     {
       source: 'Organiser Weekly',
       date: 'January 2023',
       title: 'Madras High Court orders alternate route to preserve ancient Chidambaram shrines',
-      desc: 'Double victory for heritage activists as Court stays demolition of highway-overlapping temple shrines, ordering NHAI to adjust widening layout plans.'
+      desc: 'Double victory for heritage activists as Court stays demolition of highway-overlapping temple shrines, ordering NHAI to adjust widening layout plans.',
+      url: '/news/chidambaram-shrines.html'
     }
   ];
 
@@ -58,7 +61,7 @@ export default function Media() {
                   </div>
                   <h4 className="press-title">{p.title}</h4>
                   <p className="press-snippet">{p.desc}</p>
-                  <a href="#read" onClick={(e) => e.preventDefault()} className="press-link">
+                  <a href={p.url} className="press-link">
                     Read Full Report <i className="fas fa-arrow-right" style={{ fontSize: '0.75rem' }}></i>
                   </a>
                 </div>
@@ -88,7 +91,7 @@ export default function Media() {
             <div className="sidebar-box">
               <h3>Thoughts on Mann Ki Baat</h3>
               <p>A monthly roundtable forum initiated by Ashvathaman. It translates PM Modi's development visions into regional community action plans.</p>
-              <a href="#contact" className="btn-primary" style={{ padding: '10px 20px', fontSize: '0.8rem' }}>JOIN NEXT ROUNDTABLE</a>
+              <a href="https://www.mygov.in/mann-ki-baat/" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ padding: '10px 20px', fontSize: '0.8rem' }}>JOIN NEXT ROUNDTABLE</a>
             </div>
           </div>
         </div>

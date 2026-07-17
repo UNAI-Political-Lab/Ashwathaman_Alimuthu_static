@@ -48,21 +48,35 @@ export default function Footer({ onNavigate }) {
               </div>
             </div>
             <div className="footer-social-icons">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f"></i></a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-x-twitter"></i></a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-youtube"></i></a>
+              <a href="https://www.facebook.com/asuvathaman.allimuthu/" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f"></i></a>
+              <a href="https://x.com/asuvathaman" target="_blank" rel="noopener noreferrer"><i className="fab fa-x-twitter"></i></a>
+              <a href="https://www.instagram.com/asuvathamanallimuthu/?hl=en" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a>
+              <a href="https://www.youtube.com/channel/UCW271630AAMsr_Shfs-2FFw" target="_blank" rel="noopener noreferrer"><i className="fab fa-youtube"></i></a>
             </div>
           </div>
         </div>
 
         <div className="footer-bottom">
-          <p>&copy; 2026 A. Ashvathaman Allimuthu. All rights reserved. Built for civic transparency.</p>
-          <div className="footer-bottom-links">
-            <a href="#privacy">Privacy Policy</a>
-            <a href="#terms">Terms of Use</a>
-            <a href="#legal">Legal Disclaimer</a>
+          <div className="footer-bottom-info">
+            <p>&copy; 2026 A. Ashvathaman Allimuthu. All rights reserved. Built for civic transparency.</p>
+            <div className="footer-bottom-links">
+              <a href="/legal/privacy-policy.html">Privacy Policy</a>
+              <a href="/legal/terms-of-use.html">Terms of Use</a>
+              <a href="/legal/legal-disclaimer.html">Legal Disclaimer</a>
+            </div>
           </div>
+          <a href="https://unaitech.com" target="_blank" rel="noopener noreferrer" className="unai-tech-badge">
+            <div className="unai-tech-badge-text">
+              <span className="unai-crafted">CRAFTED BY</span>
+              <span className="unai-brand">UNAI<span className="unai-tech">TECH</span></span>
+            </div>
+            <div className="unai-tech-badge-icon">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </div>
+          </a>
         </div>
       </div>
     </footer>

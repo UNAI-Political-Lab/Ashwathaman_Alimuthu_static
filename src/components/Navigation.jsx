@@ -57,10 +57,10 @@ export default function Navigation({ activePath, onNavigate }) {
           </nav>
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <div className="social-nav">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f"></i></a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-x-twitter"></i></a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-youtube"></i></a>
+              <a href="https://www.facebook.com/asuvathaman.allimuthu/" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f"></i></a>
+              <a href="https://x.com/asuvathaman" target="_blank" rel="noopener noreferrer"><i className="fab fa-x-twitter"></i></a>
+              <a href="https://www.instagram.com/asuvathamanallimuthu/?hl=en" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a>
+              <a href="https://www.youtube.com/channel/UCW271630AAMsr_Shfs-2FFw" target="_blank" rel="noopener noreferrer"><i className="fab fa-youtube"></i></a>
             </div>
             <a href="/contact" onClick={(e) => handleLinkClick(e, '/contact')} className="btn-contact-nav">
               GET IN TOUCH <i className="fas fa-chevron-right" style={{ fontSize: '0.75rem' }}></i>
@@ -91,10 +91,10 @@ export default function Navigation({ activePath, onNavigate }) {
           ))}
         </ul>
         <div className="mobile-nav-social">
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f"></i></a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-x-twitter"></i></a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a>
-          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-youtube"></i></a>
+          <a href="https://www.facebook.com/asuvathaman.allimuthu/" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f"></i></a>
+          <a href="https://x.com/asuvathaman" target="_blank" rel="noopener noreferrer"><i className="fab fa-x-twitter"></i></a>
+          <a href="https://www.instagram.com/asuvathamanallimuthu/?hl=en" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/channel/UCW271630AAMsr_Shfs-2FFw" target="_blank" rel="noopener noreferrer"><i className="fab fa-youtube"></i></a>
         </div>
       </div>
     </>
