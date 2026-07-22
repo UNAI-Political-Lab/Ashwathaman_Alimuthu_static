@@ -44,7 +44,7 @@ export default function Home({ onNavigate, onWatchVideo }) {
 
             <h1 className="hero-headline">
               DON'T FOLLOW <span className="orange-part">ME,</span><br />
-              JUST FOLLOW MY <span className="green-part">IDEOLOGY.</span>
+              JUST FOLLOW <span className="green-part">MY IDEOLOGY.</span>
             </h1>
             <p className="hero-description">
               Committed to building a stronger, inclusive and developed India through people-centric leadership, youth empowerment and social responsibility.
