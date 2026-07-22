@@ -38,7 +38,8 @@ export default function Navigation({ activePath, onNavigate }) {
       <header className={`header ${isSticky ? 'sticky' : ''}`}>
         <div className="container nav-container">
           <a href="/" onClick={(e) => handleLinkClick(e, '/')} className="logo logo-link">
-            <img src="/assets/logo_1_0.webp" alt="Ashvathaman Allimuthu Logo" />
+            <img src="/assets/logo-bjp.webp" alt="BJP Logo" />
+            <span className="logo-text">A. Ashvathaman Allimuthu</span>
           </a>
           <nav>
             <ul className="nav-links">

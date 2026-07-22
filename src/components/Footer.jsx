@@ -11,7 +11,10 @@ export default function Footer({ onNavigate }) {
       <div className="container">
         <div className="footer-grid">
           <div className="footer-brand">
-            <img src="/assets/logo_1_0.webp" alt="Ashvathaman Allimuthu" className="footer-brand-logo" />
+            <a href="/" onClick={(e) => handleLinkClick(e, '/')} className="footer-logo-link">
+              <img src="/assets/logo-bjp.webp" alt="Ashvathaman Allimuthu" className="footer-brand-logo" />
+              <span className="footer-logo-text">A. Ashvathaman Allimuthu</span>
+            </a>
             <p className="footer-brand-desc">
               A. Ashvathaman Allimuthu is State Secretary of Tamil Nadu BJP Legal Cell, a practicing advocate at Chennai, political leader and writer dedicated to national civilizational progress.
             </p>
@@ -62,7 +65,6 @@ export default function Footer({ onNavigate }) {
             <div className="footer-bottom-links">
               <a href="/legal/privacy-policy.html">Privacy Policy</a>
               <a href="/legal/terms-of-use.html">Terms of Use</a>
-              <a href="/legal/legal-disclaimer.html">Legal Disclaimer</a>
             </div>
           </div>
           <a href="https://unaitech.com" target="_blank" rel="noopener noreferrer" className="unai-tech-badge">
