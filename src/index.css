@@ -122,6 +122,10 @@ a {
   white-space: nowrap;
 }
 
+.header-leaders-mobile {
+  display: none;
+}
+
 .nav-links {
   display: flex;
   list-style: none;
@@ -341,14 +345,75 @@ a {
 }
 
 @media (max-width: 991px) {
-  .leaders-avatars {
-    justify-content: center;
-  }
   .hero-leaders-group {
+    order: 1;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-bottom: 25px;
+    align-items: flex-end;
+    align-self: flex-end;
+    margin-left: auto;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 15px;
+    width: auto;
+  }
+
+  .leaders-group-label {
+    text-align: right;
+    font-size: 0.65rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+  }
+
+  .leaders-avatars {
+    justify-content: flex-end;
+    gap: 6px;
+  }
+
+  .leader-avatar-item {
+    width: 46px;
+    gap: 3px;
+  }
+
+  .leader-avatar {
+    width: 36px !important;
+    height: 36px !important;
+    border-width: 1.5px;
+  }
+
+  .leader-name {
+    font-size: 0.56rem;
+    line-height: 1.15;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-leaders-group {
+    margin-bottom: 12px;
+  }
+
+  .leaders-group-label {
+    font-size: 0.58rem;
+    margin-bottom: 4px;
+  }
+
+  .leaders-avatars {
+    gap: 4px;
+  }
+
+  .leader-avatar-item {
+    width: 40px;
+    gap: 2px;
+  }
+
+  .leader-avatar {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  .leader-name {
+    font-size: 0.5rem;
   }
 }
 
@@ -2426,32 +2491,33 @@ textarea.form-control {
   .hero-grid {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 25px;
     text-align: center;
   }
 
   .hero-left {
     padding-right: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: contents;
   }
 
   .hero-headline {
-    font-size: 2.6rem;
+    order: 3;
+    font-size: 2.4rem;
   }
 
   .hero-description {
+    order: 4;
     margin-left: auto;
     margin-right: auto;
   }
 
   .hero-ctas {
+    order: 5;
     justify-content: center;
   }
 
   .hero-right {
-    order: -1;
+    order: 2;
     justify-content: center;
   }
 

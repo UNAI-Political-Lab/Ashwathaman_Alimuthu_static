@@ -13,7 +13,6 @@ export default function Home({ onNavigate, onWatchVideo }) {
           <div className="hero-left">
 
             <div className="hero-leaders-group">
-              <span className="leaders-group-label">Guided by Visionary Leadership</span>
               <div className="leaders-avatars">
                 <div className="leader-avatar-item">
                   <img src="/assets/leader_1.webp" alt="Shri Narendra Modi" className="leader-avatar" />

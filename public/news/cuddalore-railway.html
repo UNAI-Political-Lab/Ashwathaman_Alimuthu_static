@@ -54,22 +54,47 @@
         }
 
         .back-link {
-            color: var(--ink-600);
+            color: var(--ink-900);
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             display: inline-flex;
             align-items: center;
             gap: 8px;
             text-decoration: none;
-            transition: color 0.2s;
+            white-space: nowrap;
+            padding: 8px 16px;
+            border-radius: 8px;
+            background-color: var(--off-white);
+            border: 1px solid var(--border-light);
+            transition: all 0.2s ease;
         }
 
         .back-link:hover {
             color: var(--orange-600);
+            border-color: var(--orange-600);
+            background-color: var(--white);
+        }
+
+        .news-logo-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
         }
 
         .logo-img {
-            height: 40px;
+            height: 38px;
+            width: 38px;
+        }
+
+        .news-logo-text {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 0.95rem;
+            color: var(--orange-600);
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            white-space: nowrap;
         }
 
         .article-card {
@@ -169,10 +194,9 @@
 <body>
     <header class="header">
         <div class="container header-content">
-            <a href="/" class="back-link">
-                <i class="fas fa-arrow-left"></i> Back to Main Site
+            <a href="javascript:void(0)" onclick="if(document.referrer && document.referrer.indexOf(window.location.host) !== -1){ history.back(); } else { window.location.href='/media'; }" class="back-link">
+                <i class="fas fa-arrow-left"></i> Back
             </a>
-            <img src="/assets/logo_1_0.webp" alt="BJP Logo" class="logo-img" />
         </div>
     </header>
 
